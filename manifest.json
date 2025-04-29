@@ -1,1 +1,15 @@
-{"name": "ViloApp", "short_name": "ViloApp", "start_url": "./index.html", "display": "standalone", "background_color": "#F5F5F5", "theme_color": "#002D72", "icons": [{"src": "viloapp-icon.png", "type": "image/png", "sizes": "512x512"}]}
+{
+    "name": "ViloApp",
+    "short_name": "ViloApp",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#002D72",
+    "theme_color": "#002D72",
+    "icons": [
+        {
+            "src": "viloapp-icon-final-folha.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
