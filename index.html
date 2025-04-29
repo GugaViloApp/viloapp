@@ -12,13 +12,13 @@
         :root {
             --bg: #F5F5F5;
             --fg: #002D72;
-            --button-bg: #002D72;
-            --button-text: #fff;
+            --button-bg: #fff;
+            --button-text: #000;
         }
         [data-theme="dark"] {
             --bg: #111;
             --fg: #f5f5f5;
-            --button-bg: #333;
+            --button-bg: #222;
             --button-text: #fff;
         }
         body {
@@ -26,7 +26,6 @@
             color: var(--fg);
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            transition: background 0.3s, color 0.3s;
         }
         header {
             background-color: #fff;
@@ -60,32 +59,16 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            border-radius: 10px;
-            transition: background 0.3s ease, transform 0.2s ease;
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
         }
         .button:hover {
             transform: translateY(-2px);
-            opacity: 0.95;
         }
         .icon-img {
-            width: 28px;
-            height: 28px;
-        }
-        .voltar {
-            display: inline-block;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-            color: var(--fg);
-            text-decoration: none;
-        }
-        .theme-toggle {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
@@ -98,23 +81,14 @@
     </script>
     <header>
         <img src="vilomix-logo.png" alt="Vilomix Logo">
-        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
     </header>
     <div class="container">
         <h2>ViloApp</h2>
-        
         <a class="button" href="farmlist.html" target="_blank"><img src="farmlist-icon.png" class="icon-img">Farmlist</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/c18b8639-1501-4be5-a7ef-72ad3dc42cba" target="_blank"><img src="farmlist-icon.png" class="icon-img">Solicitação</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/f3636c46-6373-4c23-80d5-7b75b9fd2726" target="_blank"><img src="farmlist-icon.png" class="icon-img">Pedidos</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/c16f0c2b-1b44-4efb-8b4f-5fdeee1eb4d8" target="_blank"><img src="farmlist-icon.png" class="icon-img">Amostras & Análises</a>
-<a class="button" href="https://favu.app/app/private/forms/fill/431aef3d-0879-4a88-a005-7c68237d18fb" target="_blank"><img src="farmlist-icon.png" class="icon-img">Resultados Vilomix</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/c18b8639-1501-4be5-a7ef-72ad3dc42cba" target="_blank"><img src="envelope-icon.png" class="icon-img">Solicitação</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/f3636c46-6373-4c23-80d5-7b75b9fd2726" target="_blank"><img src="cart-icon.png" class="icon-img">Pedidos</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/c16f0c2b-1b44-4efb-8b4f-5fdeee1eb4d8" target="_blank"><img src="microscope-icon.png" class="icon-img">Amostras & Análises</a>
+<a class="button" href="https://favu.app/app/private/forms/fill/431aef3d-0879-4a88-a005-7c68237d18fb" target="_blank"><img src="chart-icon.png" class="icon-img">Resultados Vilomix</a>
     </div>
-    <script>
-        function toggleTheme() {
-            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-            document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
-            localStorage.setItem("theme", isDark ? "light" : "dark");
-        }
-    </script>
 </body>
 </html>
