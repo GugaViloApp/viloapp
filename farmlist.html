@@ -1,124 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulários Farmlist</title>
-    <link rel="icon" href="favicon.ico" />
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#002D72"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-    <style>
-        :root {
-            --bg: #F5F5F5;
-            --fg: #002D72;
-            --button-bg: #002D72;
-            --button-text: #fff;
-        }
-        [data-theme="dark"] {
-            --bg: #111;
-            --fg: #f5f5f5;
-            --button-bg: #333;
-            --button-text: #fff;
-        }
-        body {
-            background-color: var(--bg);
-            color: var(--fg);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            transition: background 0.3s, color 0.3s;
-        }
-        header {
-            background-color: #fff;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 1px solid #ccc;
-        }
-        header img {
-            max-height: 60px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 1rem;
-        }
-        h2 {
-            font-size: 1.4rem;
-            margin: 1rem 0;
-            border-bottom: 2px solid var(--fg);
-            padding-bottom: 0.5rem;
-        }
-        .button {
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            text-decoration: none;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-radius: 10px;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-        .button:hover {
-            transform: translateY(-2px);
-            opacity: 0.95;
-        }
-        .icon-img {
-            width: 28px;
-            height: 28px;
-        }
-        .voltar {
-            display: inline-block;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-            color: var(--fg);
-            text-decoration: none;
-        }
-        .theme-toggle {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulários Farmlist</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f6f7;
+    }
+    header {
+      background: white;
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    header img {
+      height: 48px;
+    }
+    h1 {
+      text-align: center;
+      color: #002f6c;
+      padding: 0.5rem 0 0.2rem;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .button {
+      display: flex;
+      align-items: center;
+      background-color: #002f6c;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      transition: background-color 0.2s ease;
+    }
+    .button:hover {
+      background-color: #004494;
+    }
+    .button img {
+      width: 28px;
+      height: 28px;
+      margin-right: 1rem;
+    }
+    .back {
+      margin: 1rem 0;
+      display: inline-block;
+      color: #002f6c;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #002f6c;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <script>
-        const saved = localStorage.getItem("theme");
-        if (saved === "dark") {
-            document.documentElement.setAttribute("data-theme", "dark");
-        }
-    </script>
-    <header>
-        <img src="vilomix-logo.png" alt="Vilomix Logo">
-        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-    </header>
-    <div class="container">
-        <h2>Formulários Farmlist</h2>
-        <a class="voltar" href="index.html">← Voltar ao menu</a>
-        <a class="button" href="https://favu.app/app/private/forms/fill/4e68cf71-16e1-4cfb-b70a-e52aa0b98833" target="_blank"><img src="farmlist-icon.png" class="icon-img">00. Demonstração</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/2cf1e08a-0cb8-458e-a772-f72eec9b29e2" target="_blank"><img src="farmlist-icon.png" class="icon-img">01. Termo de Consentimento</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/814924a5-45c9-4123-a7dc-6bedc9e0c589" target="_blank"><img src="farmlist-icon.png" class="icon-img">02. Caracterização</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/127dcfe2-7420-4556-8348-e8dc1a82bd45" target="_blank"><img src="farmlist-icon.png" class="icon-img">03. Fábrica de rações</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/4a8f4af8-cf01-4338-9204-ac0d4d71f0ad" target="_blank"><img src="farmlist-icon.png" class="icon-img">04. Maternidade</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/41f1f2f0-046b-4bcb-827c-df2a3cb83f9e" target="_blank"><img src="farmlist-icon.png" class="icon-img">05. Creche</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/f5a1d492-2199-483e-bcea-9d08c59bd4d2" target="_blank"><img src="farmlist-icon.png" class="icon-img">06. Engorda</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/ec7f5532-76aa-4cd5-95d0-30db8d7b191a" target="_blank"><img src="farmlist-icon.png" class="icon-img">07. Reposição</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/b89c2cb3-8274-4f22-900a-41714364fc1c" target="_blank"><img src="farmlist-icon.png" class="icon-img">08. Gestação</a>
-    </div>
-    <script>
-        function toggleTheme() {
-            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-            document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
-            localStorage.setItem("theme", isDark ? "light" : "dark");
-        }
-    </script>
+  <header>
+    <img src="vilomix-logo.png" alt="Vilomix Logo" />
+  </header>
+  <div class="container">
+    <h1>Formulários Farmlist</h1>
+    <hr />
+    <a href='index.html' class='back'>&larr; Voltar ao menu</a>
+    <a href="https://favu.app/app/private/forms/fill/4e68cf71-16e1-4cfb-b70a-e52aa0b98833" class="button">
+      <img src="form-icon.png" alt="Ícone" />
+      <span>00. Demonstração</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/2cf1e08a-0cb8-458e-a772-f72eec9b29e2" class="button">
+      <img src="check-icon.png" alt="Ícone" />
+      <span>01. Termo de Consentimento</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/814924a5-45c9-4123-a7dc-6bedc9e0c589" class="button">
+      <img src="document-icon.png" alt="Ícone" />
+      <span>02. Caracterização</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/127dcfe2-7420-4556-8348-e8dc1a82bd45" class="button">
+      <img src="factory-icon.png" alt="Ícone" />
+      <span>03. Fábrica de rações</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/4a8f4af8-cf01-4338-9204-ac0d4d71f0ad" class="button">
+      <img src="sow-piglets-icon.png" alt="Ícone" />
+      <span>04. Maternidade</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/41f1f2f0-046b-4bcb-827c-df2a3cb83f9e" class="button">
+      <img src="piglet-icon.png" alt="Ícone" />
+      <span>05. Creche</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/f5a1d492-2199-483e-bcea-9d08c59bd4d2" class="button">
+      <img src="pig-icon.png" alt="Ícone" />
+      <span>06. Engorda</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/ec7f5532-76aa-4cd5-95d0-30db8d7b191a" class="button">
+      <img src="recycle-icon.png" alt="Ícone" />
+      <span>07. Reposição</span>
+    </a>
+    <a href="https://favu.app/app/private/forms/preview/b89c2cb3-8274-4f22-900a-41714364fc1c" class="button">
+      <img src="pregnant-pig-icon.png" alt="Ícone" />
+      <span>08. Gestação</span>
+    </a>
+  </div>
 </body>
 </html>
