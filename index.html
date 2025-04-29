@@ -59,7 +59,7 @@
             margin: 0.5rem 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             border-radius: 10px;
             transition: background 0.3s ease, transform 0.2s ease;
         }
@@ -67,8 +67,9 @@
             transform: translateY(-2px);
             opacity: 0.95;
         }
-        .icon {
-            font-size: 1.3rem;
+        .icon-img {
+            width: 28px;
+            height: 28px;
         }
         .voltar {
             display: inline-block;
@@ -90,7 +91,6 @@
 </head>
 <body>
     <script>
-        // Tema escuro
         const saved = localStorage.getItem("theme");
         if (saved === "dark") {
             document.documentElement.setAttribute("data-theme", "dark");
@@ -103,11 +103,11 @@
     <div class="container">
         <h2>ViloApp</h2>
         
-        <a class="button" href="farmlist.html" target="_blank"><span class="icon">📋</span>Farmlist</a>
-<a class="button" href="solicitacao.html" target="_blank"><span class="icon">📝</span>Solicitação</a>
-<a class="button" href="pedidos.html" target="_blank"><span class="icon">🛒</span>Pedidos</a>
-<a class="button" href="amostras.html" target="_blank"><span class="icon">🧪</span>Amostras & Análises</a>
-<a class="button" href="https://favu.app/app/private/forms/fill/431aef3d-0879-4a88-a005-7c68237d18fb" target="_blank"><span class="icon">📈</span>Resultados Vilomix</a>
+        <a class="button" href="farmlist.html" target="_blank"><img src="farmlist-icon.png" class="icon-img">Farmlist</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/c18b8639-1501-4be5-a7ef-72ad3dc42cba" target="_blank"><img src="farmlist-icon.png" class="icon-img">Solicitação</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/f3636c46-6373-4c23-80d5-7b75b9fd2726" target="_blank"><img src="farmlist-icon.png" class="icon-img">Pedidos</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/c16f0c2b-1b44-4efb-8b4f-5fdeee1eb4d8" target="_blank"><img src="farmlist-icon.png" class="icon-img">Amostras & Análises</a>
+<a class="button" href="https://favu.app/app/private/forms/fill/431aef3d-0879-4a88-a005-7c68237d18fb" target="_blank"><img src="farmlist-icon.png" class="icon-img">Resultados Vilomix</a>
     </div>
     <script>
         function toggleTheme() {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farmlist</title>
+    <title>Formulários Farmlist</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#002D72"/>
@@ -59,7 +59,7 @@
             margin: 0.5rem 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             border-radius: 10px;
             transition: background 0.3s ease, transform 0.2s ease;
         }
@@ -67,8 +67,9 @@
             transform: translateY(-2px);
             opacity: 0.95;
         }
-        .icon {
-            font-size: 1.3rem;
+        .icon-img {
+            width: 28px;
+            height: 28px;
         }
         .voltar {
             display: inline-block;
@@ -90,7 +91,6 @@
 </head>
 <body>
     <script>
-        // Tema escuro
         const saved = localStorage.getItem("theme");
         if (saved === "dark") {
             document.documentElement.setAttribute("data-theme", "dark");
@@ -101,17 +101,17 @@
         <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
     </header>
     <div class="container">
-        <h2>Farmlist</h2>
+        <h2>Formulários Farmlist</h2>
         <a class="voltar" href="index.html">← Voltar ao menu</a>
-        <a class="button" href="https://favu.app/app/private/forms/fill/4e68cf71-16e1-4cfb-b70a-e52aa0b98833" target="_blank"><span class="icon">📄</span>00. Demonstração</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/2cf1e08a-0cb8-458e-a772-f72eec9b29e2" target="_blank"><span class="icon">✔️</span>01. Termo de Consentimento</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/814924a5-45c9-4123-a7dc-6bedc9e0c589" target="_blank"><span class="icon">📝</span>02. Caracterização</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/127dcfe2-7420-4556-8348-e8dc1a82bd45" target="_blank"><span class="icon">🏭</span>03. Fábrica de rações</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/4a8f4af8-cf01-4338-9204-ac0d4d71f0ad" target="_blank"><span class="icon">🐖🐖</span>04. Maternidade</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/41f1f2f0-046b-4bcb-827c-df2a3cb83f9e" target="_blank"><span class="icon">🐷🐽</span>05. Creche</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/f5a1d492-2199-483e-bcea-9d08c59bd4d2" target="_blank"><span class="icon">🐷💪</span>06. Engorda</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/ec7f5532-76aa-4cd5-95d0-30db8d7b191a" target="_blank"><span class="icon">🔁</span>07. Reposição</a>
-<a class="button" href="https://favu.app/app/private/forms/preview/b89c2cb3-8274-4f22-900a-41714364fc1c" target="_blank"><span class="icon">🐷➕🐷</span>08. Gestação</a>
+        <a class="button" href="https://favu.app/app/private/forms/fill/4e68cf71-16e1-4cfb-b70a-e52aa0b98833" target="_blank"><img src="farmlist-icon.png" class="icon-img">00. Demonstração</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/2cf1e08a-0cb8-458e-a772-f72eec9b29e2" target="_blank"><img src="farmlist-icon.png" class="icon-img">01. Termo de Consentimento</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/814924a5-45c9-4123-a7dc-6bedc9e0c589" target="_blank"><img src="farmlist-icon.png" class="icon-img">02. Caracterização</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/127dcfe2-7420-4556-8348-e8dc1a82bd45" target="_blank"><img src="farmlist-icon.png" class="icon-img">03. Fábrica de rações</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/4a8f4af8-cf01-4338-9204-ac0d4d71f0ad" target="_blank"><img src="farmlist-icon.png" class="icon-img">04. Maternidade</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/41f1f2f0-046b-4bcb-827c-df2a3cb83f9e" target="_blank"><img src="farmlist-icon.png" class="icon-img">05. Creche</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/f5a1d492-2199-483e-bcea-9d08c59bd4d2" target="_blank"><img src="farmlist-icon.png" class="icon-img">06. Engorda</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/ec7f5532-76aa-4cd5-95d0-30db8d7b191a" target="_blank"><img src="farmlist-icon.png" class="icon-img">07. Reposição</a>
+<a class="button" href="https://favu.app/app/private/forms/preview/b89c2cb3-8274-4f22-900a-41714364fc1c" target="_blank"><img src="farmlist-icon.png" class="icon-img">08. Gestação</a>
     </div>
     <script>
         function toggleTheme() {
