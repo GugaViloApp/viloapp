@@ -4,18 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViloApp</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#002D72"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
     <style>
+        :root {
+            --bg: #F5F5F5;
+            --fg: #002D72;
+            --button-bg: #002D72;
+            --button-text: #fff;
+        }
+        [data-theme="dark"] {
+            --bg: #111;
+            --fg: #f5f5f5;
+            --button-bg: #333;
+            --button-text: #fff;
+        }
         body {
+            background-color: var(--bg);
+            color: var(--fg);
             font-family: 'Montserrat', sans-serif;
-            background-color: #F5F5F5;
-            color: #002D72;
             margin: 0;
+            transition: background 0.3s, color 0.3s;
         }
         header {
             background-color: #fff;
-            text-align: center;
             padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #ccc;
         }
         header img {
             max-height: 60px;
@@ -27,33 +47,74 @@
         }
         h2 {
             font-size: 1.4rem;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
+            border-bottom: 2px solid var(--fg);
+            padding-bottom: 0.5rem;
         }
         .button {
-            background-color: #002D72;
-            color: #fff;
+            background-color: var(--button-bg);
+            color: var(--button-text);
             text-decoration: none;
             padding: 1rem;
             margin: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-radius: 8px;
+            border-radius: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
         }
         .icon {
             font-size: 1.3rem;
         }
+        .voltar {
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header><img src="vilomix-logo.png" alt="Vilomix Logo" /></header>
+    <script>
+        // Tema escuro
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+    </script>
+    <header>
+        <img src="vilomix-logo.png" alt="Vilomix Logo">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    </header>
     <div class="container">
         <h2>ViloApp</h2>
-        <a class="button" href="farmlist.html"><span class="icon">📋</span>Farmlist</a>
-<a class="button" href="solicitacao.html"><span class="icon">📝</span>Solicitação</a>
-<a class="button" href="pedidos.html"><span class="icon">🛒</span>Pedidos</a>
-<a class="button" href="amostras.html"><span class="icon">🧪</span>Amostras & Análises</a>
+        
+        <a class="button" href="farmlist.html" target="_blank"><span class="icon">📋</span>Farmlist</a>
+<a class="button" href="solicitacao.html" target="_blank"><span class="icon">📝</span>Solicitação</a>
+<a class="button" href="pedidos.html" target="_blank"><span class="icon">🛒</span>Pedidos</a>
+<a class="button" href="amostras.html" target="_blank"><span class="icon">🧪</span>Amostras & Análises</a>
 <a class="button" href="https://favu.app/app/private/forms/fill/431aef3d-0879-4a88-a005-7c68237d18fb" target="_blank"><span class="icon">📈</span>Resultados Vilomix</a>
     </div>
+    <script>
+        function toggleTheme() {
+            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+            document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+            localStorage.setItem("theme", isDark ? "light" : "dark");
+        }
+    </script>
 </body>
 </html>
